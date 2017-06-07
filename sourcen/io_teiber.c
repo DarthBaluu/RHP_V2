@@ -39,8 +39,10 @@ BYTE Init(DSCB BoardHandle, unsigned long int Steuerwort) {
         }
         BoardHandle->Board_allocated=1;
         if(a==1){io_out16(DIR0,0x00ff);}
+        if(a==0){io_out16(DIR0,0x0000);}
         if(b==1){io_out16(DIR0, (io_in16(DIR0)|0xff00));}
         if(c==1){io_out16(DIR1,0x00ff);}
+        if(c==0){io_out16(DIR1,0x0000);}
         if(d==1){io_out16(DIR1, (io_in16(DIR1)|0xff00));}
 
         BoardHandle->Port_A_Direction=a;
